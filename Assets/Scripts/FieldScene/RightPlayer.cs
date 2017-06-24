@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RightPlayer : MonoBehaviour
 {
+
+    public static RightPlayer current;
+    public Vector3 startPosition;
     GameObject player;
     float JumpTime = 0f;
     public float MaxJumpTime = 5f;
@@ -16,7 +19,8 @@ public class RightPlayer : MonoBehaviour
     void Start()
     {
         myBody = this.GetComponent<Rigidbody2D>();
-
+        startPosition = transform.position;
+        current = this;
     }
 
     // Update is called once per frame

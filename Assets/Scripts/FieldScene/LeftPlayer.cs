@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LeftPlayer : MonoBehaviour {
+
+   public static LeftPlayer current;
+    public Vector3 startPosition;
     GameObject player;
     float JumpTime = 0f;
     public float MaxJumpTime = 5f;
@@ -14,7 +17,8 @@ public class LeftPlayer : MonoBehaviour {
     // Use this for initialization
     void Start () {
     myBody = this.GetComponent<Rigidbody2D>();
-
+        startPosition = transform.position;
+        current = this;
     }
 
     // Update is called once per frame
