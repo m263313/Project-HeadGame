@@ -304,6 +304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   matchTime: 60
   timePanel: {fileID: 742580558}
+  winPanelPrefab: {fileID: 1809807434159076, guid: af238f262782266439fda7dced36091b,
+    type: 2}
 --- !u!1001 &344100290
 Prefab:
   m_ObjectHideFlags: 0
@@ -2122,7 +2124,7 @@ MonoBehaviour:
     relative: 0.5
     absolute: -499
   updateAnchors: 1
-  mColor: {r: 0.5568628, g: 0.41960785, b: 1, a: 1}
+  mColor: {r: 0.6117647, g: 0.49411765, b: 1, a: 1}
   mPivot: 4
   mWidth: 2464
   mHeight: 448

@@ -10,8 +10,11 @@ public class LevelController : MonoBehaviour {
     bool isFinished = false;
     public float matchTime = 60f;
     public UILabel timePanel;
+	public GameObject winPanelPrefab;
+	bool isPanelCreated=false;
 	// Use this for initialization
 	void Start () {
+		Time.timeScale = 1f;
         mode = PlayerPrefs.GetString("mode", Mode.training);
         if (mode.Equals(Mode.training))
         {
@@ -25,16 +28,24 @@ public class LevelController : MonoBehaviour {
         {
             StartByTime();
         }
+
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (isFinished&&(!isPanelCreated)) {
+			createWinPanel ();
+			isPanelCreated = true;
+		}
+
         if (isByGoals)
         {
             if (ScoreController.current.RightMissed > 4 || ScoreController.current.LeftMissed > 4)
             {
                 isFinished = true;
                 Time.timeScale = 0f;
+
             }
         }
         if (isByTime)
@@ -43,10 +54,13 @@ public class LevelController : MonoBehaviour {
             {
                 isFinished = true;
                 Time.timeScale = 0f;
+
             }
             matchTime -= Time.deltaTime;
             timePanel.text = ("" +Math.Truncate(matchTime));
         }
+
+
 	}
     void StartTraining()
     {
@@ -61,4 +75,11 @@ public class LevelController : MonoBehaviour {
     {
         isByTime = true;
     }
+
+	public void createWinPanel(){
+		GameObject parent = UICamera.first.transform.parent.gameObject;
+		GameObject obj = NGUITools.AddChild (parent, winPanelPrefab);
+		WinPanel win = obj.GetComponent<WinPanel>();
+		win.setScore (ScoreController.current.LeftMissed+":"+ScoreController.current.RightMissed);
+	}
 }
