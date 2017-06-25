@@ -7,8 +7,35 @@ public class ScoreController : MonoBehaviour {
     int leftMissed = 0;
     int rightMissed = 0;
   public  UILabel score;
-	// Use this for initialization
-	void Start () {
+
+    public int RightMissed
+    {
+        get
+        {
+            return rightMissed;
+        }
+
+        set
+        {
+            rightMissed = value;
+        }
+    }
+
+    public int LeftMissed
+    {
+        get
+        {
+            return leftMissed;
+        }
+
+        set
+        {
+            leftMissed = value;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         current = this;
 	}
 	

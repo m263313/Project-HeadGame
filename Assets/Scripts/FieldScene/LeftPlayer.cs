@@ -35,9 +35,11 @@ public class LeftPlayer : MonoBehaviour {
             vel.x = value * speed;
             myBody.velocity = vel;
         }
-        Vector3 from = transform.position + Vector3.up * 1f;
-        Vector3 to = transform.position + Vector3.down * 1f;
+        Vector3 from = transform.position + Vector3.up * 0.5f;
+        Vector3 to = transform.position + Vector3.down * 0.5f;
         int layer_id = 1 << LayerMask.NameToLayer("Ground");
+        //Намалювати лінію (для розробника)
+        Debug.DrawLine(from, to, Color.red);
         //Перевіряємо чи проходить лінія через Collider з шаром Ground
         RaycastHit2D hit = Physics2D.Linecast(from, to, layer_id);
         if (hit)
