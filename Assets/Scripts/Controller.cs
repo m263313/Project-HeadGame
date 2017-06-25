@@ -4,17 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour {
+	public UILabel bioFirst;
+	public UILabel bioSecond;
 	public MyButton nextButton1;
 	public MyButton nextButton2;
 	public MyButton prevButton1;
 	public MyButton prevButton2;
 	public MyButton playButton;
+	public MyButton menuButton;
 	public UILabel firstPlayerLabel;
 	public UILabel secondPlayerLabel;
 	public UI2DSprite firstPlayerSprite;
 	public UI2DSprite secondPlayerSprite;
 	public List<Sprite> sprites;
 	public List<string> names;
+	public List<string> bio;
 	int countFirst;
 	int countSecond;
 	public int numberOfPlayers;
@@ -33,6 +37,7 @@ public class Controller : MonoBehaviour {
 		if(secondPlayerSprite!=null)
 		this.prevButton2.signalOnClick.AddListener (this.prev2);
 		this.playButton.signalOnClick.AddListener (this.play);
+		this.menuButton.signalOnClick.AddListener (this.menu);
 	}
 	
 	void next1(){
@@ -76,17 +81,23 @@ public class Controller : MonoBehaviour {
 		this.firstPlayerSprite.sprite2D = sprites [countFirst];
 		this.firstPlayerLabel.text = names [countFirst];
 		firstPlayerSprite.flip = UIBasicSprite.Flip.Horizontally;
+		bioFirst.text = bio [countFirst];
 	}
 
 	void refresh2(){
 		this.secondPlayerSprite.sprite2D = sprites [countSecond];
 		this.secondPlayerLabel.text = names [countSecond];
+		bioSecond.text = bio [countSecond];
 	}
 
 	void play(){
 		PlayerPrefs.SetInt ("leftPlayer",countFirst);
 		PlayerPrefs.SetInt ("rightPlayer",countSecond);
 		SceneManager.LoadScene ("GameField");
+	}
+
+	void menu(){
+		SceneManager.LoadScene ("Menu");
 	}
 
 }
