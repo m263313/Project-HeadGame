@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4035270930189832}
   - component: {fileID: 212695981483195794}
-  - component: {fileID: 114348407497521956}
   - component: {fileID: 50031737923264292}
+  - component: {fileID: 114398333182814446}
   m_Layer: 0
   m_Name: LeftPlayer2
   m_TagString: Untagged
@@ -187,7 +187,7 @@ PolygonCollider2D:
       - {x: 0.93, y: -0.42499998}
       - {x: 1.06, y: -0.345}
       - {x: 1.06, y: 0.095}
---- !u!114 &114348407497521956
+--- !u!114 &114398333182814446
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -195,13 +195,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1084503836877208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd6fb4a962a83a84dbc04ae5764d4f72, type: 3}
+  m_Script: {fileID: 11500000, guid: f7ce03394b6c97047a14130c7e1c866c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0, z: 0}
+  foot: {fileID: 0}
+  MaxFootAngle: 14
   MaxJumpTime: 1
   JumpSpeed: 2
-  speed: 1
+  speed: 2
 --- !u!212 &212695981483195794
 SpriteRenderer:
   m_ObjectHideFlags: 1

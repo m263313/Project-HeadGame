@@ -6,14 +6,18 @@ public class LeftPlayer : MonoBehaviour {
 
    public static LeftPlayer current;
     public Vector3 startPosition;
-    GameObject player;
+    public GameObject foot;
+    int FootAngle = 0;
+  
     float JumpTime = 0f;
+    public int MaxFootAngle = 14;
     public float MaxJumpTime = 5f;
     public float JumpSpeed = 10f;
     Rigidbody2D myBody = null;
     public float speed = 1;
     bool JumpActive = false;
     bool isGrounded = false;
+    bool isKick = false;
     // Use this for initialization
     void Start () {
     myBody = this.GetComponent<Rigidbody2D>();
@@ -75,6 +79,32 @@ public class LeftPlayer : MonoBehaviour {
                 this.JumpActive = false;
                 this.JumpTime = 0;
             }
+        }
+
+        if (Input.GetButtonDown("LeftPlayerFoot"))
+        {
+            isKick = true;
+        }
+        if (isKick)
+        {
+            if (Input.GetButton("LeftPlayerFoot"))
+
+            {
+                if (FootAngle < MaxFootAngle)
+                {
+                    foot.transform.Rotate(Vector3.forward * -5);
+                    FootAngle += 5;
+
+                }
+            }
+            else
+            {
+                //  foot.transform.Rotate(Vector3.forward * 0);
+                foot.transform.Rotate(Vector3.forward * FootAngle);
+                FootAngle = 0;
+                isKick = false;
+            }
+
         }
     }
 }

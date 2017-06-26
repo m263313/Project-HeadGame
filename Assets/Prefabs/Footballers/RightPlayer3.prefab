@@ -199,9 +199,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0, z: 0}
+  foot: {fileID: 0}
+  MaxFootAngle: 14
   MaxJumpTime: 1
   JumpSpeed: 2
-  speed: 1
+  speed: 2
 --- !u!212 &212492347337250886
 SpriteRenderer:
   m_ObjectHideFlags: 1
