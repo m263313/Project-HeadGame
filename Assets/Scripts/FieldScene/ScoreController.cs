@@ -8,6 +8,9 @@ public class ScoreController : MonoBehaviour {
     int rightMissed = 0;
   public  UILabel score;
 
+	public AudioClip goolClip = null;
+	AudioSource goolSource = null;
+
     public int RightMissed
     {
         get
@@ -37,6 +40,9 @@ public class ScoreController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         current = this;
+		goolSource = gameObject.AddComponent<AudioSource>();
+		goolSource.clip = goolClip;
+		goolSource.loop = false;
 	}
 	
 	// Update is called once per frame
@@ -45,11 +51,15 @@ public class ScoreController : MonoBehaviour {
 	}
     public void LeftMissedGoal()
     {
+		if(SoundManager.Instance.isSoundOn())
+		goolSource.Play ();
         leftMissed++;
         ReturnForPositions();
     }
     public void RightMissedGoal()
     {
+		if(SoundManager.Instance.isSoundOn())
+		goolSource.Play ();
         rightMissed++;
         ReturnForPositions();
     }

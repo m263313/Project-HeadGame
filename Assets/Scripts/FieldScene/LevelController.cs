@@ -17,8 +17,31 @@ public class LevelController : MonoBehaviour {
     public GameObject rightPlayer;
     public List<GameObject> leftPlayerList;
     public List<GameObject> rightPlayerList;
+
+	public MyButton musicButton;
+	public Sprite soundOn;
+	public Sprite soundOff;
+	public AudioClip musicClip = null;
+	AudioSource musicSource = null;
+	bool music;
+
+
+
+
+
     // Use this for initialization
     void Start () {
+		musicSource = gameObject.AddComponent<AudioSource>();
+		musicSource.clip = musicClip;
+		musicSource.loop = true;
+		musicSource.volume = 0.5f;
+		if(SoundManager.Instance.isSoundOn())
+			musicSource.Play ();
+		music = SoundManager.Instance.isSoundOn ();
+		changeMusic ();
+		changeMusic ();
+		musicButton.signalOnClick.AddListener (changeMusic);
+
 		Time.timeScale = 1f;
         mode = PlayerPrefs.GetString("mode", Mode.training);
         if (mode.Equals(Mode.training))
@@ -103,4 +126,18 @@ public class LevelController : MonoBehaviour {
         // rightPlayer = rightPlayerList[right];
         //     leftPlayer = leftPlayerList[left];
     }
+
+	void changeMusic(){
+		if (music) {
+			musicSource.Pause ();
+			musicButton.GetComponent<UIButton> ().normalSprite2D = soundOff;
+			SoundManager.Instance.setSoundOn (false);
+			music = false;
+		} else {
+			musicSource.Play ();
+			musicButton.GetComponent<UIButton> ().normalSprite2D = soundOn;
+			SoundManager.Instance.setSoundOn (true);
+			music = true;
+		}
+	}
 }
