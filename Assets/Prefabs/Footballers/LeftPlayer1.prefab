@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0, z: 0}
   foot: {fileID: 1360579117025360}
-  MaxFootAngle: 28
+  MaxFootAngle: 50
   MaxJumpTime: 1
   JumpSpeed: 2
   speed: 2

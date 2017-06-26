@@ -12,8 +12,13 @@ public class LevelController : MonoBehaviour {
     public UILabel timePanel;
 	public GameObject winPanelPrefab;
 	bool isPanelCreated=false;
-	// Use this for initialization
-	void Start () {
+
+    public GameObject leftPlayer;
+    public GameObject rightPlayer;
+    public List<GameObject> leftPlayerList;
+    public List<GameObject> rightPlayerList;
+    // Use this for initialization
+    void Start () {
 		Time.timeScale = 1f;
         mode = PlayerPrefs.GetString("mode", Mode.training);
         if (mode.Equals(Mode.training))
@@ -29,6 +34,7 @@ public class LevelController : MonoBehaviour {
             StartByTime();
         }
 
+        SetPlayers();
     }
 	
 	// Update is called once per frame
@@ -82,4 +88,19 @@ public class LevelController : MonoBehaviour {
 		WinPanel win = obj.GetComponent<WinPanel>();
 		win.setScore (ScoreController.current.LeftMissed+":"+ScoreController.current.RightMissed);
 	}
+    void SetPlayers()
+    {
+        int right = PlayerPrefs.GetInt("rightPlayer", 1);
+        int left = PlayerPrefs.GetInt("leftPlayer", 1) ;
+        leftPlayer.AddChild(leftPlayerList[left]);
+        rightPlayer.AddChild(rightPlayerList[right]);
+
+        // leftPlayer.SetActive(false);
+
+        //explosion.transform.position = charExplode.transform.position;
+        // explosion.transform.rotation = charExplode.transform.rotation;
+        //  explosion.SetActive(true);
+        // rightPlayer = rightPlayerList[right];
+        //     leftPlayer = leftPlayerList[left];
+    }
 }
