@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour {
+	public MyButton musicButton;
+	public Sprite soundOn;
+	public Sprite soundOff;
+	public AudioClip musicClip = null;
+	AudioSource musicSource = null;
+	bool music;
 	public UILabel bioFirst;
 	public UILabel bioSecond;
 	public MyButton nextButton1;
@@ -24,6 +30,15 @@ public class Controller : MonoBehaviour {
 	public int numberOfPlayers;
 	// Use this for initialization
 	void Start () {
+		musicSource = gameObject.AddComponent<AudioSource>();
+		musicSource.clip = musicClip;
+		musicSource.loop = true;
+		if(SoundManager.Instance.isSoundOn())
+			musicSource.Play ();
+		music = SoundManager.Instance.isSoundOn ();
+		changeMusic ();
+		changeMusic ();
+		musicButton.signalOnClick.AddListener (changeMusic);
 		numberOfPlayers--;
 		countFirst = 0;
 		countSecond = 1;
@@ -100,6 +115,18 @@ public class Controller : MonoBehaviour {
 		SceneManager.LoadScene ("Menu");
 	}
 
-
+	void changeMusic(){
+		if (music) {
+			musicSource.Pause ();
+			musicButton.GetComponent<UIButton> ().normalSprite2D = soundOff;
+			SoundManager.Instance.setSoundOn (false);
+			music = false;
+		} else {
+			musicSource.Play ();
+			musicButton.GetComponent<UIButton> ().normalSprite2D = soundOn;
+			SoundManager.Instance.setSoundOn (true);
+			music = true;
+		}
+	}
 
 }

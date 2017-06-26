@@ -1144,6 +1144,64 @@ MonoBehaviour:
   mFixedAspect: 1
   mPixelSize: 1
   nextSprite: {fileID: 0}
+--- !u!1001 &1395173498
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1665322721}
+    m_Modifications:
+    - target: {fileID: 4517272223302528, guid: 265fc3ed089c2114d8e1e9751d6bb7e6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2176
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517272223302528, guid: 265fc3ed089c2114d8e1e9751d6bb7e6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517272223302528, guid: 265fc3ed089c2114d8e1e9751d6bb7e6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517272223302528, guid: 265fc3ed089c2114d8e1e9751d6bb7e6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517272223302528, guid: 265fc3ed089c2114d8e1e9751d6bb7e6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517272223302528, guid: 265fc3ed089c2114d8e1e9751d6bb7e6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517272223302528, guid: 265fc3ed089c2114d8e1e9751d6bb7e6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517272223302528, guid: 265fc3ed089c2114d8e1e9751d6bb7e6, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 61215693206468246, guid: 265fc3ed089c2114d8e1e9751d6bb7e6,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 355.25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 265fc3ed089c2114d8e1e9751d6bb7e6, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1395173499 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4517272223302528, guid: 265fc3ed089c2114d8e1e9751d6bb7e6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1395173498}
+--- !u!114 &1395173500 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114146010952338204, guid: 265fc3ed089c2114d8e1e9751d6bb7e6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1395173498}
+  m_Script: {fileID: 11500000, guid: fc9f41f4b8c34324fa16fd094a5ebb62, type: 3}
 --- !u!1001 &1545783109
 Prefab:
   m_ObjectHideFlags: 0
@@ -1429,6 +1487,7 @@ Transform:
   - {fileID: 770668733}
   - {fileID: 400435167}
   - {fileID: 290226754}
+  - {fileID: 1395173499}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1459,6 +1518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f5df924a98b4c45a69580a9a284c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicButton: {fileID: 1395173500}
+  soundOn: {fileID: 21300000, guid: e8cc9a917d71c504295b6740b573af37, type: 3}
+  soundOff: {fileID: 21300000, guid: 96db1f40b7d7be542b63eadc556e891a, type: 3}
+  musicClip: {fileID: 8300000, guid: 4c6c8d5ff239c9d43a9e92517fa0276c, type: 3}
   bioFirst: {fileID: 1970500026}
   bioSecond: {fileID: 650218883}
   nextButton1: {fileID: 308545024}
