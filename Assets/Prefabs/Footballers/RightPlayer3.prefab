@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4125411019746032}
   - component: {fileID: 212982243525130320}
   - component: {fileID: 60576681163979838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftBoots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1232777211768916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.1736482, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -95,7 +95,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1085394961020208}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.189, y: -3.219, z: 0}
   m_LocalScale: {x: 0.28250995, y: 0.33197105, z: 0.48788658}
   m_Children:

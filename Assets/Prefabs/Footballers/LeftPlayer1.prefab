@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4152134059341270}
   - component: {fileID: 212570137057696910}
   - component: {fileID: 60695411931555126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftBoots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
