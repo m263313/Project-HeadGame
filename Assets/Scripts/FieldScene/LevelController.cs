@@ -109,7 +109,7 @@ public class LevelController : MonoBehaviour {
 		GameObject parent = UICamera.first.transform.parent.gameObject;
 		GameObject obj = NGUITools.AddChild (parent, winPanelPrefab);
 		WinPanel win = obj.GetComponent<WinPanel>();
-		win.setScore (ScoreController.current.LeftMissed+":"+ScoreController.current.RightMissed);
+		win.setScore (ScoreController.current.RightMissed+":"+ScoreController.current.LeftMissed);
 	}
     void SetPlayers()
     {
